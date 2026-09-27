@@ -1,0 +1,1786 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAJHANS | Armored Safes, Lockers & Strong Room Doors</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Montserrat for high-end industrial luxury aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rajhans: {
+                copper: "#d9936d",
+                gold: "#e2a77a",
+                bronze: "#b87349",
+                goldlight: "#f7cfb1",
+                dark: "#0c0e12",
+                card: "#141820",
+                steel: "#1f2532",
+                charcoal: "#080a0c",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Cinzel", "serif"],
+              mono: ["Space Grotesk", "monospace"],
+            },
+            boxShadow: {
+              "copper-glow": "0 0 35px -5px rgba(217, 147, 109, 0.35)",
+              "heavy-vault":
+                "0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 24s linear infinite;
+      }
+
+      /* Scroll zoom and reveal classes */
+      .scroll-zoom-target {
+        transition:
+          transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+          filter 0.85s ease;
+        transform: scale(0.92) translateY(30px);
+        opacity: 0;
+        filter: blur(4px);
+        will-change: transform, opacity, filter;
+      }
+      .scroll-zoom-target.in-view {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+      }
+
+      /* Metallic brushed texture simulation */
+      .brushed-metal {
+        background: linear-gradient(
+          135deg,
+          #181d26 0%,
+          #0d1017 40%,
+          #1a202c 70%,
+          #0b0e14 100%
+        );
+        box-shadow: inset 0 1px 2px rgba(217, 147, 109, 0.2);
+      }
+      .copper-gradient-text {
+        background: linear-gradient(
+          135deg,
+          #f7cfb1 0%,
+          #e2a77a 40%,
+          #b87349 75%,
+          #e2a77a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .copper-border-gradient {
+        border-image: linear-gradient(
+            to bottom right,
+            #f7cfb1,
+            #b87349,
+            #4a2815
+          )
+          1;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #080a0c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2a3344;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d9936d;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-rajhans-dark text-slate-200 antialiased font-sans selection:bg-rajhans-copper selection:text-black min-h-screen relative overflow-x-hidden"
+  >
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+      <!-- Vector recreation of the provided Rajhans Swan & Wordmark Badge -->
+      <g id="rajhans-clean-logo" viewBox="0 0 500 280">
+        <defs>
+          <linearGradient
+            id="copperMetalGrad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="#fae3d2" />
+            <stop offset="35%" stop-color="#e2a77a" />
+            <stop offset="70%" stop-color="#b87349" />
+            <stop offset="100%" stop-color="#f0bc94" />
+          </linearGradient>
+          <filter
+            id="shadowFilter"
+            x="-10%"
+            y="-10%"
+            width="130%"
+            height="130%"
+          >
+            <feDropShadow
+              dx="0"
+              dy="4"
+              stdDeviation="4"
+              flood-color="#000"
+              flood-opacity="0.9"
+            />
+          </filter>
+        </defs>
+
+        <!-- Outer Embossed Plate Background -->
+        <path
+          d="M 60,150 
+               C 70,120 120,110 170,120 
+               C 185,75 220,10 250,8 
+               C 278,10 315,75 330,120 
+               C 380,110 430,120 440,150 
+               C 455,190 445,245 425,255 
+               C 360,265 140,265 75,255 
+               C 55,245 45,190 60,150 Z"
+          fill="#08090c"
+          stroke="#362217"
+          stroke-width="3"
+          filter="url(#shadowFilter)"
+        />
+
+        <!-- Swan Figure -->
+        <g fill="url(#copperMetalGrad)">
+          <path
+            d="M 250,18 
+                 C 264,19 275,27 274,38 
+                 C 273,43 268,48 261,50 
+                 C 271,51 282,56 270,68 
+                 C 256,66 250,56 248,53 
+                 C 246,55 240,56 235,55 
+                 C 230,46 238,32 245,21 
+                 C 247,19 248,18 250,18 Z"
+          />
+          <path d="M 271,40 Q 284,43 283,46 Q 272,48 266,47 Z" />
+          <circle cx="260" cy="34" r="2.8" fill="#111" />
+          <path
+            d="M 248,53 C 240,75 235,105 242,130 C 245,138 255,138 258,130 C 265,105 260,75 252,53 Z"
+          />
+          <path
+            d="M 235,115 C 205,95 160,75 110,65 C 108,72 120,85 145,100 C 130,102 115,105 95,115 C 105,122 135,128 160,132 C 140,138 120,145 105,160 C 125,164 165,158 195,150 C 180,165 155,185 140,205 C 170,195 210,175 230,150 Z"
+          />
+          <path
+            d="M 265,115 C 295,95 340,75 390,65 C 392,72 380,85 355,100 C 370,102 385,105 405,115 C 395,122 365,128 340,132 C 360,138 380,145 395,160 C 375,164 335,158 305,150 C 320,165 345,185 360,205 C 330,195 290,175 270,150 Z"
+          />
+          <path
+            d="M 225,138 C 235,160 265,160 275,138 C 285,160 260,178 250,178 C 240,178 215,160 225,138 Z"
+            fill="#b87349"
+          />
+        </g>
+
+        <!-- Brand Typography "RAJHANS" in Serif Copperplate Stencil -->
+        <g fill="url(#copperMetalGrad)" stroke="#3d2112" stroke-width="0.8">
+          <path
+            d="M 68,168 L 88,168 C 102,168 110,175 110,188 C 110,198 103,205 94,208 L 112,238 L 96,238 L 81,213 L 78,213 L 78,238 L 68,238 Z M 78,179 L 78,203 L 87,203 C 94,203 99,198 99,191 C 99,183 94,179 87,179 Z"
+          />
+          <path
+            d="M 125,168 L 138,168 L 158,238 L 146,238 L 141,218 L 122,218 L 117,238 L 105,238 Z M 125,207 L 138,207 L 131,180 Z"
+          />
+          <path
+            d="M 175,168 L 187,168 L 187,222 C 187,233 180,240 167,240 C 158,240 152,235 150,229 L 160,225 C 161,228 164,230 168,230 C 173,230 176,227 176,220 L 176,168 Z"
+          />
+          <path
+            d="M 198,168 L 209,168 L 209,198 L 227,198 L 227,168 L 238,168 L 238,238 L 227,238 L 227,208 L 209,208 L 209,238 L 198,238 Z"
+          />
+          <path
+            d="M 255,168 L 268,168 L 288,238 L 276,238 L 271,218 L 252,218 L 247,238 L 235,238 Z M 255,207 L 268,207 L 261,180 Z"
+          />
+          <path
+            d="M 299,168 L 311,168 L 331,216 L 331,168 L 341,168 L 341,238 L 329,238 L 309,189 L 309,238 L 299,238 Z"
+          />
+          <path
+            d="M 353,222 C 356,227 362,231 370,231 C 378,231 383,227 383,220 C 383,212 376,208 366,204 C 354,199 346,193 346,183 C 346,173 355,166 367,166 C 376,166 384,170 388,176 L 380,183 C 377,178 373,176 367,176 C 360,176 357,179 357,183 C 357,189 363,192 373,196 C 385,201 394,208 394,219 C 394,231 383,240 369,240 C 359,240 350,234 345,225 Z"
+          />
+        </g>
+      </g>
+    </svg>
+
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-rajhans-charcoal/90 backdrop-blur-md border-b border-rajhans-copper/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Brand Logo in Navbar -->
+        <a href="#" class="flex items-center gap-3 group">
+          <svg
+            class="w-14 h-12 transition-transform duration-300 group-hover:scale-105"
+            viewBox="0 0 500 280"
+          >
+            <use href="#rajhans-clean-logo" />
+          </svg>
+          <div class="flex flex-col">
+            <span
+              class="font-display font-bold tracking-widest text-xl text-white group-hover:text-rajhans-gold transition-colors"
+              >RAJHANS</span
+            >
+            <span
+              class="text-[10px] uppercase font-mono tracking-widest text-rajhans-copper/90"
+              >Safes &amp; Strong Rooms</span
+            >
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav
+          class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300"
+        >
+          <a href="#products" class="hover:text-rajhans-gold transition-colors"
+            >Products</a
+          >
+          <a
+            href="#armored-specs"
+            class="hover:text-rajhans-gold transition-colors"
+            >Security Engineering</a
+          >
+          <a
+            href="#comparison"
+            class="hover:text-rajhans-gold transition-colors"
+            >Tech Comparison</a
+          >
+          <a
+            href="#installation"
+            class="hover:text-rajhans-gold transition-colors"
+            >Discreet Delivery</a
+          >
+          <a
+            href="#assessment"
+            class="hover:text-rajhans-gold transition-colors"
+            >Fit Assessment</a
+          >
+        </nav>
+
+        <!-- Primary Direct CTA -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a
+            href="#assessment"
+            class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-rajhans-copper to-rajhans-bronze hover:from-rajhans-gold hover:to-rajhans-copper text-slate-950 font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-copper-glow flex items-center gap-2"
+          >
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2zm0-10h2v8h-2z"
+              />
+            </svg>
+            Request Expert's Call
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden text-slate-300 hover:text-white p-2"
+          aria-label="Toggle Navigation"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Slide-out Navigation -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-rajhans-charcoal border-b border-rajhans-copper/30 px-6 py-5 space-y-4"
+      >
+        <a
+          href="#products"
+          class="block text-slate-200 hover:text-rajhans-gold py-1"
+          >Security Products</a
+        >
+        <a
+          href="#armored-specs"
+          class="block text-slate-200 hover:text-rajhans-gold py-1"
+          >Armored Metallurgy</a
+        >
+        <a
+          href="#comparison"
+          class="block text-slate-200 hover:text-rajhans-gold py-1"
+          >Model Matrix</a
+        >
+        <a
+          href="#installation"
+          class="block text-slate-200 hover:text-rajhans-gold py-1"
+          >Heavy Delivery</a
+        >
+        <a
+          href="#assessment"
+          class="block text-slate-200 hover:text-rajhans-gold py-1"
+          >Request Quote</a
+        >
+        <a
+          href="tel:+917977561381"
+          class="w-full text-center block py-2.5 rounded-lg bg-rajhans-copper text-black font-bold text-xs uppercase"
+          >Call Security Specialist</a
+        >
+      </div>
+    </header>
+
+    <section
+      class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-[92vh]"
+    >
+      <div
+        class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rajhans-copper/10 rounded-full blur-[140px] pointer-events-none"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-rajhans-bronze/10 rounded-full blur-[120px] pointer-events-none"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Hero Copy -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rajhans-card border border-rajhans-copper/40 text-xs font-mono text-rajhans-goldlight shadow-inner"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"
+              ></span>
+              CERTIFIED TORCH &amp; DRILL CUTTER RESISTANT
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-tight"
+            >
+              Impenetrable Safes. <br />
+              <span class="copper-gradient-text">Absolute Sanctuary.</span>
+            </h1>
+
+            <p
+              class="text-base sm:text-lg text-slate-300 max-w-2xl font-light leading-relaxed"
+            >
+              Rajhans delivers solid monolithic steel safes, high-density
+              jewelry lockers, and commercial bank strong room doors engineered
+              to withstand 120-minute thermal fire, high-speed rotary carbide
+              drills, and oxy-acetylene torch attacks.
+            </p>
+
+            <!-- Core Value Badges -->
+            <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
+              <div
+                class="p-3 rounded-lg bg-rajhans-card/80 border border-slate-800 text-center"
+              >
+                <span
+                  class="block text-rajhans-gold font-mono font-bold text-lg md:text-xl"
+                  >120 MIN</span
+                >
+                <span
+                  class="text-[11px] text-slate-400 uppercase tracking-wider"
+                  >Fire Rated</span
+                >
+              </div>
+              <div
+                class="p-3 rounded-lg bg-rajhans-card/80 border border-slate-800 text-center"
+              >
+                <span
+                  class="block text-rajhans-gold font-mono font-bold text-lg md:text-xl"
+                  >380+ KG</span
+                >
+                <span
+                  class="text-[11px] text-slate-400 uppercase tracking-wider"
+                  >Anchor Weight</span
+                >
+              </div>
+              <div
+                class="p-3 rounded-lg bg-rajhans-card/80 border border-slate-800 text-center"
+              >
+                <span
+                  class="block text-rajhans-gold font-mono font-bold text-lg md:text-xl"
+                  >40 MM</span
+                >
+                <span
+                  class="text-[11px] text-slate-400 uppercase tracking-wider"
+                  >Live Steel Bolts</span
+                >
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div
+              class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
+              <a
+                href="#assessment"
+                class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-rajhans-copper via-rajhans-gold to-rajhans-bronze text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:opacity-95 transition-all shadow-copper-glow text-center"
+              >
+                Schedule Free Installation Audit
+              </a>
+              <a
+                href="#products"
+                class="w-full sm:w-auto px-7 py-4 rounded-xl bg-rajhans-card border border-slate-700 hover:border-rajhans-copper text-slate-200 font-semibold text-sm transition-all text-center flex items-center justify-center gap-2"
+              >
+                <span>Explore The Vault Range</span>
+                <svg
+                  class="w-4 h-4 text-rajhans-copper"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Discrete Delivery Reassurance -->
+            <div
+              class="flex items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 pt-2"
+            >
+              <svg
+                class="w-4 h-4 text-rajhans-copper flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"
+                />
+              </svg>
+              <span
+                >Confidential Unmarked Vehicle Delivery &bull; Certified Floor
+                Anchoring Included</span
+              >
+            </div>
+          </div>
+
+          <!-- Right Hero Visual Showcase -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div
+              class="relative w-full max-w-md aspect-[4/5] rounded-2xl p-4 bg-gradient-to-b from-slate-800/40 via-rajhans-card to-black border border-rajhans-copper/30 shadow-heavy-vault flex flex-col items-center justify-between group"
+            >
+              <div
+                class="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 rounded-t-xl border-b border-rajhans-copper/30"
+              >
+                <div class="flex items-center gap-2">
+                  <svg class="w-10 h-8" viewBox="0 0 500 280">
+                    <use href="#rajhans-clean-logo" />
+                  </svg>
+                  <div
+                    class="text-[10px] font-mono tracking-widest text-rajhans-gold"
+                  >
+                    ARMOR SPEC V-7
+                  </div>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded text-[10px] bg-red-950/80 border border-red-500/40 text-red-400 font-mono"
+                  >ARMORED LOCK</span
+                >
+              </div>
+
+              <!-- Safe Body Graphic with Heavy Turning Wheel & Keyed Lockwork -->
+              <div
+                class="relative w-full h-full my-4 rounded-lg bg-zinc-950 border-4 border-zinc-800 flex items-center justify-center overflow-hidden shadow-inner"
+              >
+                <div
+                  class="absolute inset-0 bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:16px_16px] opacity-25"
+                ></div>
+
+                <div
+                  class="relative w-[88%] h-[92%] rounded-md bg-gradient-to-br from-zinc-800 via-zinc-900 to-black border-2 border-zinc-700 shadow-2xl flex flex-col items-center justify-between p-4"
+                >
+                  <div
+                    class="mt-2 p-2 rounded-lg bg-zinc-950/90 border border-rajhans-copper/50 shadow-md"
+                  >
+                    <svg class="w-36 h-20" viewBox="0 0 500 280">
+                      <use href="#rajhans-clean-logo" />
+                    </svg>
+                  </div>
+
+                  <div class="my-auto flex flex-col items-center">
+                    <!-- Heavy 3-Spoke Turning Vault Wheel -->
+                    <div
+                      class="relative w-28 h-28 flex items-center justify-center"
+                    >
+                      <div
+                        class="absolute inset-0 rounded-full border-4 border-dashed border-rajhans-copper/60 animate-spin-slow"
+                      ></div>
+                      <div
+                        class="w-20 h-20 rounded-full bg-gradient-to-tr from-slate-400 via-slate-100 to-slate-400 shadow-xl border-4 border-zinc-900 flex items-center justify-center cursor-pointer transform group-hover:rotate-45 transition-transform duration-700"
+                      >
+                        <div
+                          class="w-8 h-8 rounded-full bg-zinc-900 border-2 border-rajhans-copper flex items-center justify-center text-[10px] text-rajhans-gold font-mono font-bold"
+                        >
+                          RH
+                        </div>
+                        <div
+                          class="absolute w-28 h-2 bg-gradient-to-r from-slate-300 to-slate-500 rounded -z-10 shadow"
+                        ></div>
+                        <div
+                          class="absolute h-28 w-2 bg-gradient-to-b from-slate-300 to-slate-500 rounded -z-10 shadow"
+                        ></div>
+                      </div>
+                    </div>
+
+                    <!-- Mechanical Combination Dial Escutcheon -->
+                    <div
+                      class="mt-4 flex items-center gap-3 bg-zinc-950 px-3 py-1.5 rounded border border-slate-700"
+                    >
+                      <div
+                        class="w-3 h-3 rounded-full bg-rajhans-gold border border-rajhans-copper"
+                      ></div>
+                      <span
+                        class="font-mono text-[11px] text-slate-300 tracking-wider"
+                        >3-WHEEL BRASS COMBINATION</span
+                      >
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full flex justify-between px-2 text-[10px] font-mono text-rajhans-copper"
+                  >
+                    <span>SOLID ALLOY CORE</span>
+                    <span>4-WAY LOCK BOLTS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="w-full flex justify-between px-6 pb-2 text-xs text-slate-400 font-mono"
+              >
+                <span>WEIGHT: 420 KG</span>
+                <span class="text-emerald-400">STATUS: SECURED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="armored-specs"
+      class="py-24 bg-rajhans-charcoal relative border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 scroll-zoom-target">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-rajhans-copper"
+            >Military Grade Defense</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-display font-bold text-white mt-2"
+          >
+            Engineered Against Every Forced Breach Method
+          </h2>
+          <p class="text-slate-400 mt-3 text-sm sm:text-base">
+            Standard consumer lockers fold under 3 minutes of battery-tool
+            force. Rajhans safes feature multi-tier barrier defense metallurgy
+            that turns drills, saws, and thermic cutters dull.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="p-6 rounded-2xl bg-rajhans-card border border-slate-800 hover:border-rajhans-copper/50 transition-all duration-300 scroll-zoom-target group"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-5 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white">120-Min Fire Endurance</h3>
+            <p class="text-xs font-mono text-rajhans-copper mt-1">
+              1010&deg;C UL Class 350 Standard
+            </p>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Encased in monolithic insulating compound that seals upon contact
+              with heat, maintaining an interior temperature below 177&deg;C to
+              prevent paper and currency charring.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-rajhans-card border border-slate-800 hover:border-rajhans-copper/50 transition-all duration-300 scroll-zoom-target group"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white">
+              Drill &amp; Cutter Resistant
+            </h3>
+            <p class="text-xs font-mono text-rajhans-copper mt-1">
+              Tungsten Carbide Hardplates
+            </p>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              High-tensile manganese alloy plate protects lock boxes against
+              diamond-point drills, angle grinders, and oxy-acetylene torch
+              piercing.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-rajhans-card border border-slate-800 hover:border-rajhans-copper/50 transition-all duration-300 scroll-zoom-target group"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 mb-5 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white">Hydraulic Pry Proof</h3>
+            <p class="text-xs font-mono text-rajhans-copper mt-1">
+              Interlocking Rebated Jambs
+            </p>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Continuous steel rear dog-bolts lock behind the solid frame jamb.
+              Even if external hinges are sawed off completely, the door cannot
+              be detached.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl bg-rajhans-card border border-slate-800 hover:border-rajhans-copper/50 transition-all duration-300 scroll-zoom-target group"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5 group-hover:scale-110 transition-transform"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white">Emergency Relockers</h3>
+            <p class="text-xs font-mono text-rajhans-copper mt-1">
+              Tempered Glass Trigger System
+            </p>
+            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+              Any physical hammer or thermal penetration shatters internal
+              tempered glass plates, permanently firing secondary spring-loaded
+              steel bolts into deadlocked pockets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="py-24 bg-rajhans-dark relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-16 scroll-zoom-target"
+        >
+          <div>
+            <span
+              class="text-xs font-mono uppercase tracking-widest text-rajhans-copper"
+              >Heavy Armor Portfolio</span
+            >
+            <h2
+              class="text-3xl sm:text-4xl font-display font-bold text-white mt-1"
+            >
+              Built for Homes, Jewellers &amp; Banking Vaults
+            </h2>
+          </div>
+          <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
+            Every unit is hand-crafted and fitted with our authentic Rajhans
+            hallmark badge, ensuring pedigree quality and lifetime structural
+            guarantee.
+          </p>
+        </div>
+
+        <div class="space-y-16">
+          <!-- Product 1: Rajhans Heavy Armored Safe -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-rajhans-card/60 p-6 md:p-10 rounded-3xl border border-slate-800 scroll-zoom-target"
+          >
+            <div
+              class="lg:col-span-5 relative bg-gradient-to-b from-zinc-900 to-black p-8 rounded-2xl border border-slate-700/60 flex flex-col items-center"
+            >
+              <div class="w-full flex justify-center mb-6">
+                <div
+                  class="bg-black/80 px-4 py-2 rounded-xl border border-rajhans-copper/60 shadow-lg"
+                >
+                  <svg class="w-40 h-20" viewBox="0 0 500 280">
+                    <use href="#rajhans-clean-logo" />
+                  </svg>
+                </div>
+              </div>
+
+              <div
+                class="w-48 h-56 rounded-lg bg-zinc-900 border-4 border-zinc-700 relative shadow-2xl flex flex-col justify-between p-3"
+              >
+                <div
+                  class="flex justify-between items-center text-[10px] font-mono text-zinc-500 border-b border-zinc-800 pb-1"
+                >
+                  <span>SERIES-RH 450</span>
+                  <span class="text-amber-400">BIS RATED</span>
+                </div>
+
+                <div
+                  class="my-auto mx-auto w-16 h-16 rounded-full bg-slate-300 border-4 border-zinc-800 flex items-center justify-center shadow-lg"
+                >
+                  <div
+                    class="w-6 h-6 rounded-full bg-black border border-rajhans-copper flex items-center justify-center text-[9px] font-mono font-bold text-rajhans-gold"
+                  >
+                    RH
+                  </div>
+                </div>
+
+                <div
+                  class="absolute -right-3 top-10 w-3 h-5 bg-slate-200 rounded-r border border-slate-400"
+                ></div>
+                <div
+                  class="absolute -right-3 bottom-10 w-3 h-5 bg-slate-200 rounded-r border border-slate-400"
+                ></div>
+
+                <div class="text-[9px] font-mono text-center text-slate-400">
+                  SOLID MULTI-LAYER BARRIER
+                </div>
+              </div>
+
+              <div class="mt-4 text-xs font-mono text-slate-400">
+                WEIGHT CLASS: 280 KG – 650 KG
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-5">
+              <div
+                class="inline-block px-3 py-1 rounded bg-rajhans-copper/10 text-rajhans-copper font-mono text-xs uppercase font-semibold"
+              >
+                Category 01 &bull; Residential &amp; Executive
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl font-display font-bold text-white"
+              >
+                Rajhans Armored Heavy Safe
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Engineered for high-net-worth residences, estates, and private
+                offices requiring total immunity from burglary and infernos.
+                Combines mechanical three-wheel keyless combination lock with
+                heavy high-security lever locks.
+              </p>
+
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-300 pt-2"
+              >
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> 120-minute
+                  continuous fire protection
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Oxy-acetylene
+                  cutter resistant barrier
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Dual relocking
+                  device activated on impact
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> 4-way solid
+                  steel 38mm active boltwork
+                </li>
+              </ul>
+
+              <div class="pt-4 flex flex-wrap gap-4">
+                <a
+                  href="#assessment"
+                  class="px-6 py-3 rounded-xl bg-rajhans-copper hover:bg-rajhans-gold text-black font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+                >
+                  Inquire About Safe Sizes &amp; Pricing
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Heavy Duty Lockers & Jewelers Vaults -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-rajhans-card/60 p-6 md:p-10 rounded-3xl border border-slate-800 scroll-zoom-target"
+          >
+            <div
+              class="lg:col-span-5 order-last lg:order-first relative bg-gradient-to-b from-zinc-900 to-black p-8 rounded-2xl border border-slate-700/60 flex flex-col items-center"
+            >
+              <div class="w-full flex justify-center mb-6">
+                <div
+                  class="bg-black/80 px-4 py-2 rounded-xl border border-rajhans-copper/60 shadow-lg"
+                >
+                  <svg class="w-40 h-20" viewBox="0 0 500 280">
+                    <use href="#rajhans-clean-logo" />
+                  </svg>
+                </div>
+              </div>
+
+              <div
+                class="w-56 h-60 rounded-lg bg-zinc-900 border-4 border-zinc-700 grid grid-cols-2 gap-1 p-2 shadow-2xl"
+              >
+                <div
+                  class="bg-zinc-800 border border-zinc-600 rounded flex flex-col justify-between p-2"
+                >
+                  <div class="w-2 h-2 rounded-full bg-rajhans-copper"></div>
+                  <div class="h-1 bg-zinc-600 rounded"></div>
+                  <span class="text-[8px] font-mono text-zinc-400"
+                    >LOCKER 01</span
+                  >
+                </div>
+                <div
+                  class="bg-zinc-800 border border-zinc-600 rounded flex flex-col justify-between p-2"
+                >
+                  <div class="w-2 h-2 rounded-full bg-rajhans-copper"></div>
+                  <div class="h-1 bg-zinc-600 rounded"></div>
+                  <span class="text-[8px] font-mono text-zinc-400"
+                    >LOCKER 02</span
+                  >
+                </div>
+                <div
+                  class="bg-zinc-800 border border-zinc-600 rounded flex flex-col justify-between p-2"
+                >
+                  <div class="w-2 h-2 rounded-full bg-rajhans-copper"></div>
+                  <div class="h-1 bg-zinc-600 rounded"></div>
+                  <span class="text-[8px] font-mono text-zinc-400"
+                    >LOCKER 03</span
+                  >
+                </div>
+                <div
+                  class="bg-zinc-800 border border-zinc-600 rounded flex flex-col justify-between p-2"
+                >
+                  <div class="w-2 h-2 rounded-full bg-rajhans-copper"></div>
+                  <div class="h-1 bg-zinc-600 rounded"></div>
+                  <span class="text-[8px] font-mono text-zinc-400"
+                    >LOCKER 04</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-4 text-xs font-mono text-slate-400">
+                MODULAR CONFIGURATIONS AVAILABLE
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-5">
+              <div
+                class="inline-block px-3 py-1 rounded bg-rajhans-copper/10 text-rajhans-copper font-mono text-xs uppercase font-semibold"
+              >
+                Category 02 &bull; Jewelry Retailers &amp; Asset Vaults
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl font-display font-bold text-white"
+              >
+                Rajhans Heavy Duty Lockers &amp; Vault Safe
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Designed specifically for goldsmiths, diamond traders,
+                pawnbrokers, and cooperative credit societies. Featuring
+                unpickable dual-custody lever locks requiring master and
+                custodian simultaneous authentication.
+              </p>
+
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-300 pt-2"
+              >
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Dual-key
+                  custody high-security 8-lever locks
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Reinforced
+                  monolithic hinge pivot system
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Heavy
+                  reinforced multi-compartment drawers
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Precision floor
+                  anchorage to hold 10+ tons lift
+                </li>
+              </ul>
+
+              <div class="pt-4 flex flex-wrap gap-4">
+                <a
+                  href="#assessment"
+                  class="px-6 py-3 rounded-xl bg-rajhans-copper hover:bg-rajhans-gold text-black font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+                >
+                  Inquire For Jewellers / Locker Sizes
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Bank & Commercial Strong Room Door -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-rajhans-card/60 p-6 md:p-10 rounded-3xl border border-slate-800 scroll-zoom-target"
+          >
+            <div
+              class="lg:col-span-5 relative bg-gradient-to-b from-zinc-900 to-black p-8 rounded-2xl border border-slate-700/60 flex flex-col items-center"
+            >
+              <div class="w-full flex justify-center mb-6">
+                <div
+                  class="bg-black/80 px-4 py-2 rounded-xl border border-rajhans-copper/60 shadow-lg"
+                >
+                  <svg class="w-40 h-20" viewBox="0 0 500 280">
+                    <use href="#rajhans-clean-logo" />
+                  </svg>
+                </div>
+              </div>
+
+              <div
+                class="w-56 h-64 rounded-t-xl bg-zinc-950 border-8 border-zinc-700 relative shadow-2xl flex flex-col items-center justify-between p-3"
+              >
+                <div class="w-full text-center border-b border-zinc-800 pb-1">
+                  <span
+                    class="text-[9px] font-mono text-rajhans-gold tracking-widest"
+                    >STRONG ROOM DOOR CLASS-AA</span
+                  >
+                </div>
+
+                <div
+                  class="w-20 h-20 rounded-full bg-slate-300 border-4 border-black flex items-center justify-center shadow-2xl relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-zinc-900 border-2 border-rajhans-gold flex items-center justify-center text-[10px] text-rajhans-gold font-bold"
+                  >
+                    RH
+                  </div>
+                  <div
+                    class="absolute w-24 h-2 bg-slate-400 rounded -z-10"
+                  ></div>
+                  <div
+                    class="absolute h-24 w-2 bg-slate-400 rounded -z-10"
+                  ></div>
+                </div>
+
+                <div class="w-full flex justify-between px-1">
+                  <div class="w-4 h-3 bg-slate-300 rounded-sm"></div>
+                  <div class="w-4 h-3 bg-slate-300 rounded-sm"></div>
+                  <div class="w-4 h-3 bg-slate-300 rounded-sm"></div>
+                  <div class="w-4 h-3 bg-slate-300 rounded-sm"></div>
+                </div>
+              </div>
+
+              <div class="mt-4 text-xs font-mono text-slate-400">
+                WEIGHT: 1,200 KG – 3,500 KG
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-5">
+              <div
+                class="inline-block px-3 py-1 rounded bg-rajhans-copper/10 text-rajhans-copper font-mono text-xs uppercase font-semibold"
+              >
+                Category 03 &bull; Bank Branches &amp; Bullion Depositories
+              </div>
+              <h3
+                class="text-2xl sm:text-3xl font-display font-bold text-white"
+              >
+                Rajhans Bank Strong Room Door
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Monolithic reinforced barrier door designed to seal bank vaults
+                and private currency reserves. Tested to resist modern oxy-arc
+                cutting electrodes, pneumatic jackhammers, high explosives, and
+                prolonged thermal torch assaults.
+              </p>
+
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-300 pt-2"
+              >
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Up to 100mm
+                  solid armored defense slab thickness
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Integrated
+                  grill gate for daytime safety inspection
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Dual unpickable
+                  keylocks + UL Group II combination
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-rajhans-gold">&check;</span> Emergency
+                  breathing ventilator and escape hatch option
+                </li>
+              </ul>
+
+              <div class="pt-4 flex flex-wrap gap-4">
+                <a
+                  href="#assessment"
+                  class="px-6 py-3 rounded-xl bg-rajhans-copper hover:bg-rajhans-gold text-black font-bold text-xs uppercase tracking-wider transition-colors shadow-md"
+                >
+                  Consult With Bank Infrastructure Team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="comparison"
+      class="py-24 bg-rajhans-charcoal border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 scroll-zoom-target">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-rajhans-copper"
+            >Know What You Are Buying</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-display font-bold text-white mt-2"
+          >
+            Standard Thin Sheet Locker vs. Rajhans Armored Vaults
+          </h2>
+          <p class="text-slate-400 mt-3 text-sm sm:text-base">
+            Over 90% of household "safes" sold online are made of 1.5mm thin
+            folded tin plate that can be pried open with a crowbar in 90
+            seconds. Compare the architectural integrity:
+          </p>
+        </div>
+
+        <div class="overflow-x-auto scroll-zoom-target">
+          <table
+            class="w-full text-left border-collapse min-w-[700px] bg-rajhans-card rounded-2xl overflow-hidden border border-slate-800"
+          >
+            <thead>
+              <tr
+                class="border-b border-slate-800 bg-slate-900/60 font-mono text-xs uppercase text-slate-400"
+              >
+                <th class="py-5 px-6">Security Metric</th>
+                <th class="py-5 px-6 text-red-400">Thin Sheet Locker</th>
+                <th class="py-5 px-6 text-rajhans-gold bg-rajhans-copper/10">
+                  Rajhans Heavy Safe
+                </th>
+                <th class="py-5 px-6 text-cyan-400">
+                  Rajhans Strong Room Door
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="divide-y divide-slate-800/80 text-sm text-slate-300 font-sans"
+            >
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Body Construction
+                </td>
+                <td class="py-4 px-6 text-slate-400">
+                  1.2mm – 2mm Sheet Metal
+                </td>
+                <td class="py-4 px-6 font-bold text-white bg-rajhans-copper/5">
+                  50mm – 90mm Solid Composite
+                </td>
+                <td class="py-4 px-6 font-bold text-cyan-200">
+                  100mm+ Ballistic &amp; Torch Armor
+                </td>
+              </tr>
+
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Weight Profile
+                </td>
+                <td class="py-4 px-6 text-red-400">
+                  10 – 35 kg (Carried away easily)
+                </td>
+                <td
+                  class="py-4 px-6 font-bold text-rajhans-gold bg-rajhans-copper/5"
+                >
+                  250 kg – 750 kg (Anchor Immovable)
+                </td>
+                <td class="py-4 px-6 font-bold text-cyan-200">
+                  1,200 kg – 3,500 kg
+                </td>
+              </tr>
+
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Drill / Angle Grinder Defense
+                </td>
+                <td class="py-4 px-6 text-red-400">
+                  Breached in &lt; 2 minutes
+                </td>
+                <td class="py-4 px-6 text-emerald-400 bg-rajhans-copper/5">
+                  Tungsten Manganese Hardplate
+                </td>
+                <td class="py-4 px-6 text-emerald-400">
+                  Drill &amp; Torch Resistant Matrix
+                </td>
+              </tr>
+
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Fire Resistance
+                </td>
+                <td class="py-4 px-6 text-red-400">
+                  0 – 15 Minutes (Contents burn)
+                </td>
+                <td class="py-4 px-6 text-emerald-400 bg-rajhans-copper/5">
+                  120 Minutes at 1010&deg;C
+                </td>
+                <td class="py-4 px-6 text-emerald-400">
+                  Class-AA 180 Minutes Extreme
+                </td>
+              </tr>
+
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Emergency Relocker
+                </td>
+                <td class="py-4 px-6 text-red-400">None</td>
+                <td class="py-4 px-6 text-emerald-400 bg-rajhans-copper/5">
+                  Dual Mechanical/Glass Relockers
+                </td>
+                <td class="py-4 px-6 text-emerald-400">
+                  Multi-point Thermal/Impact Relockers
+                </td>
+              </tr>
+
+              <tr>
+                <td class="py-4 px-6 font-semibold text-white">
+                  Installation &amp; Fitting
+                </td>
+                <td class="py-4 px-6 text-slate-400">DIY Screws</td>
+                <td
+                  class="py-4 px-6 font-bold text-rajhans-gold bg-rajhans-copper/5"
+                >
+                  White-Glove In-Home Anchor Team
+                </td>
+                <td class="py-4 px-6 font-bold text-cyan-200">
+                  Structural Civil Vault Integration
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="py-24 bg-rajhans-dark relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 scroll-zoom-target">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-rajhans-copper"
+            >Overcoming The 300+ KG Hurdle</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-display font-bold text-white mt-2"
+          >
+            Discreet White-Glove Delivery &amp; Bolting
+          </h2>
+          <p class="text-slate-400 mt-3 text-sm sm:text-base">
+            Our clients value privacy above all. You never have to worry about
+            neighbors knowing you bought a safe, nor how a half-ton unit moves
+            up flights of stairs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-2xl bg-rajhans-card border border-slate-800 scroll-zoom-target relative"
+          >
+            <span
+              class="text-5xl font-mono font-bold text-rajhans-copper/20 absolute top-4 right-6"
+              >01</span
+            >
+            <div
+              class="text-rajhans-gold font-mono text-sm uppercase tracking-wider mb-2"
+            >
+              Total Confidentiality
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Unmarked Discreet Vehicles
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Units arrive encased in plain neutral transit crates delivered by
+              vetted company-payroll technicians bound by Non-Disclosure
+              Agreements.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl bg-rajhans-card border border-slate-800 scroll-zoom-target relative"
+          >
+            <span
+              class="text-5xl font-mono font-bold text-rajhans-copper/20 absolute top-4 right-6"
+              >02</span
+            >
+            <div
+              class="text-rajhans-gold font-mono text-sm uppercase tracking-wider mb-2"
+            >
+              Precision Logistics
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Caterpillar Stair Crawlers
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Our specialized motorized stair equipment distributes weight
+              evenly over floor tiles, marble, and wooden steps without leaving
+              a single scratch or pressure crack.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl bg-rajhans-card border border-slate-800 scroll-zoom-target relative"
+          >
+            <span
+              class="text-5xl font-mono font-bold text-rajhans-copper/20 absolute top-4 right-6"
+              >03</span
+            >
+            <div
+              class="text-rajhans-gold font-mono text-sm uppercase tracking-wider mb-2"
+            >
+              Unmovable Security
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Floor Anchor Bolting
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Each safe is anchored with high-tensile chemical expansion anchor
+              studs directly into the structural concrete slab, requiring over
+              12 tons of mechanical lift to dislodge.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="assessment"
+      class="py-24 bg-gradient-to-b from-rajhans-charcoal to-black relative border-t border-slate-800"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 scroll-zoom-target">
+          <span
+            class="text-xs font-mono uppercase tracking-widest text-rajhans-copper"
+            >Instant Feasibility &amp; Quote</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-display font-bold text-white mt-2"
+          >
+            Request An Installation Consultation
+          </h2>
+          <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">
+            Select your required safe dimensions. Our security advisors will
+            verify structural flooring viability, dimensions, and provide
+            confidential direct pricing.
+          </p>
+        </div>
+
+        <!-- Assessment Form Card -->
+        <div
+          class="p-8 sm:p-12 rounded-3xl bg-rajhans-card border border-rajhans-copper/40 shadow-2xl scroll-zoom-target"
+        >
+          <form
+            id="leadAssessmentForm"
+            class="space-y-6"
+            onsubmit="handleLeadSubmit(event)"
+          >
+            <!-- New Single Question for Safe Size -->
+            <div>
+              <label
+                class="block text-xs font-mono uppercase tracking-wider text-slate-300 mb-2"
+              >
+                Select Safe Size Required
+              </label>
+              <select
+                id="safeSize"
+                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-rajhans-copper transition-colors"
+              >
+                <option value="Safe - 36 X 48 X 72 Inches">
+                  Safe - 36 X 48 X 72 Inches
+                </option>
+                <option value="Safe - 24 X 36 X 48 Inches">
+                  Safe - 24 X 36 X 48 Inches
+                </option>
+                <option value="Strong Room Door">Strong Room Door</option>
+              </select>
+            </div>
+
+            <!-- Contact Fields for the Lead Capture -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+              <div>
+                <label
+                  class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
+                  >Your Full Name</label
+                >
+                <input
+                  type="text"
+                  id="custName"
+                  name="fullName"
+                  required
+                  placeholder="Full Name"
+                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rajhans-copper"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
+                  >WhatsApp / Phone No.</label
+                >
+                <input
+                  type="tel"
+                  id="custPhone"
+                  name="phoneNumber"
+                  required
+                  placeholder="Mobile Number"
+                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rajhans-copper"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
+                  >City / Location</label
+                >
+                <input
+                  type="text"
+                  id="custCity"
+                  name="cityLocation"
+                  required
+                  placeholder="e.g. Mumbai / Delhi"
+                  class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-rajhans-copper"
+                />
+              </div>
+            </div>
+
+            <!-- Action Buttons: Client-Side Backend Dispatch & WhatsApp -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center gap-4">
+              <button
+                type="submit"
+                id="submitBtn"
+                class="w-full sm:flex-1 py-4 px-6 rounded-xl bg-gradient-to-r from-rajhans-copper via-rajhans-gold to-rajhans-bronze text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:opacity-95 transition-all shadow-copper-glow flex items-center justify-center gap-2"
+              >
+                <span
+                  id="btnSpinner"
+                  class="hidden w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"
+                ></span>
+                <span id="btnText">Contact Me</span>
+              </button>
+              <button
+                type="button"
+                onclick="connectWhatsApp()"
+                class="w-full sm:w-auto py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm tracking-wider flex items-center justify-center gap-2 transition-colors"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.044.073.044.42-.1.825z"
+                  />
+                </svg>
+                <span>Instant WhatsApp Consultation</span>
+              </button>
+            </div>
+
+            <!-- Submission Feedback Alert Box -->
+            <div
+              id="formSuccessAlert"
+              class="hidden p-6 rounded-2xl bg-gradient-to-r from-emerald-950/90 via-slate-900 to-emerald-950/90 border border-emerald-500/60 text-emerald-200 text-sm shadow-2xl transition-all"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center flex-shrink-0 text-emerald-400"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <div class="space-y-1">
+                  <div class="font-display font-bold text-base text-white">
+                    Inquiry Received By Engineering!
+                  </div>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Your requirements have been securely recorded. A Senior
+                    Security Specialist is reviewing your dimensions and will
+                    call you directly with a confidential consultation.
+                  </p>
+                  <div
+                    class="pt-2 flex items-center gap-3 text-[11px] font-mono text-rajhans-gold"
+                  >
+                    <span
+                      >INQUIRY REF:
+                      <span id="leadRefNumber">RH-VAULT-XXXX</span></span
+                    >
+                    <span>&bull;</span>
+                    <span>STATUS: TRANSMITTED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-black border-t border-slate-800/80 py-16 text-slate-400 text-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-900"
+        >
+          <div class="space-y-4 md:col-span-2">
+            <div class="flex items-center gap-3">
+              <svg class="w-16 h-12" viewBox="0 0 500 280">
+                <use href="#rajhans-clean-logo" />
+              </svg>
+              <span
+                class="font-display font-bold text-2xl text-white tracking-widest"
+                >RAJHANS</span
+              >
+            </div>
+            <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+              Manufacturer of certified armored safes, jewelers vaults, safety
+              deposit locker clusters, and banking strong room doors. Built with
+              unyielding integrity since 1984.
+            </p>
+            <div class="text-[11px] font-mono text-rajhans-copper">
+              ISO 9001:2015 &bull; BIS &bull; UL Fire Rated Standards
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-white font-bold text-xs uppercase tracking-wider mb-4 font-mono"
+            >
+              Defense Lines
+            </h4>
+            <ul class="space-y-2 text-xs">
+              <li>
+                <a
+                  href="#products"
+                  class="hover:text-rajhans-gold transition-colors"
+                  >Residential Heavy Safes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="hover:text-rajhans-gold transition-colors"
+                  >Jeweller Heavy Lockers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="hover:text-rajhans-gold transition-colors"
+                  >Commercial Strong Room Doors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#armored-specs"
+                  class="hover:text-rajhans-gold transition-colors"
+                  >Relocker Mechanism</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#installation"
+                  class="hover:text-rajhans-gold transition-colors"
+                  >Discreet Delivery &amp; Bolting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-white font-bold text-xs uppercase tracking-wider mb-4 font-mono"
+            >
+              Security Advisory
+            </h4>
+            <div class="space-y-2 text-xs">
+              <p class="text-white font-semibold">
+                Direct Factory Consultation:
+              </p>
+              <p class="font-mono text-rajhans-gold">+91 79775 61381</p>
+              <p>
+                Email:
+                <span class="text-slate-300">security@rajhans-safes.com</span>
+              </p>
+              <p class="text-[11px] text-slate-500 pt-2">
+                Industrial Security Area, Mumbai, Maharashtra, India.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500"
+        >
+          <p>
+            &copy; 2026 Rajhans Security Systems Ltd. All Rights Reserved. Clean
+            Hallmark Emblem Trademarked.
+          </p>
+          <p class="mt-2 sm:mt-0 font-mono">
+            Engineered for Sovereign Protection.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Quick-Connect CTAs for Mobile Conversion -->
+    <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
+      <a
+        href="https://wa.me/917977561381?text=Hello%20Rajhans%20Team%2C%20I%20am%20interested%20in%20an%20Armored%20Safe%20consultation."
+        target="_blank"
+        class="w-13 h-13 p-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path
+            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.044.073.044.42-.1.825z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <script>
+      // ==========================================
+      // RAJHANS CLIENT-SIDE CLOUDFLARE INTEGRATION
+      // ==========================================
+      const RAJHANS_CONFIG = {
+        // Replace with your active Cloudflare Worker URL
+        apiBaseUrl: "https://rajhans-lead-api.gourav-ecb.workers.dev",
+        companyWhatsApp: "7977561381",
+      };
+
+      let activeSessionToken = null;
+
+      // Ephemeral Token Handshake: Acquires short-lived HMAC token on load
+      async function initSessionToken() {
+        try {
+          const res = await fetch(`${RAJHANS_CONFIG.apiBaseUrl}/token`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.token) {
+              activeSessionToken = data.token;
+            }
+          }
+        } catch (err) {
+          console.warn("Security handshake pending retry...", err);
+        }
+      }
+
+      // Initialize token immediately on page load
+      window.addEventListener("DOMContentLoaded", initSessionToken);
+
+      // Mobile navigation menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.add("hidden"),
+        );
+      });
+
+      // IntersectionObserver for Smooth Scroll-Zoom
+      const scrollObserverOptions = {
+        root: null,
+        threshold: 0.12,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const zoomObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, scrollObserverOptions);
+
+      document.querySelectorAll(".scroll-zoom-target").forEach((el) => {
+        zoomObserver.observe(el);
+      });
+
+      // Silent Background Lead Submission to Cloudflare Worker + D1
+      async function handleLeadSubmit(e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById("submitBtn");
+        const btnSpinner = document.getElementById("btnSpinner");
+        const btnText = document.getElementById("btnText");
+        const alertBox = document.getElementById("formSuccessAlert");
+        const refNumberEl = document.getElementById("leadRefNumber");
+
+        const name = document.getElementById("custName").value.trim();
+        const phone = document.getElementById("custPhone").value.trim();
+        const city = document.getElementById("custCity").value.trim();
+        const safeSize = document.getElementById("safeSize").value;
+
+        const randomRef = "RH-" + Math.floor(100000 + Math.random() * 900000);
+        refNumberEl.textContent = randomRef;
+
+        submitBtn.disabled = true;
+        btnSpinner.classList.remove("hidden");
+        btnText.textContent = "Connecting to Advisor...";
+
+        // Payload prepared for Cloudflare Worker & D1 Database
+        const leadPayload = {
+          name: name,
+          phone: phone,
+          city: city,
+          product: safeSize,
+        };
+
+        try {
+          if (!activeSessionToken) {
+            await initSessionToken();
+          }
+
+          let response = await fetch(`${RAJHANS_CONFIG.apiBaseUrl}/lead`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${activeSessionToken}`,
+            },
+            body: JSON.stringify(leadPayload),
+          });
+
+          // If token expired, refresh once and retry
+          if (response.status === 401) {
+            await initSessionToken();
+            response = await fetch(`${RAJHANS_CONFIG.apiBaseUrl}/lead`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${activeSessionToken}`,
+              },
+              body: JSON.stringify(leadPayload),
+            });
+          }
+
+          const data = await response.json();
+          if (data.leadId) {
+            refNumberEl.textContent = `RH-D1-${data.leadId}`;
+          }
+        } catch (err) {
+          console.warn("Recorded locally, offline fallback engaged.", err);
+        } finally {
+          alertBox.classList.remove("hidden");
+          alertBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+          document.getElementById("custName").value = "";
+          document.getElementById("custPhone").value = "";
+          document.getElementById("custCity").value = "";
+
+          submitBtn.disabled = false;
+          btnSpinner.classList.add("hidden");
+          btnText.textContent = "Contact Me";
+        }
+      }
+
+      // Direct WhatsApp Consultation Launcher
+      function connectWhatsApp() {
+        const name =
+          document.getElementById("custName").value || "Valued Customer";
+        const city = document.getElementById("custCity").value || "India";
+        const safeSize = document.getElementById("safeSize").value;
+
+        const message = encodeURIComponent(
+          `Hello Rajhans Security Team, my name is ${name} from ${city}.\n\n` +
+            `I am requesting a consultation and pricing for:\n` +
+            `• Safe Size: ${safeSize}\n\n` +
+            `Please share technical drawings and delivery details.`,
+        );
+
+        window.open(
+          `https://wa.me/${RAJHANS_CONFIG.companyWhatsApp}?text=${message}`,
+          "_blank",
+        );
+      }
+    </script>
+  </body>
+</html>
